@@ -1,7 +1,15 @@
 import {useCallback, useState} from "react";
 import styled from "styled-components";
+import {RepositoryType} from "@/types/types";
 
-export default function LoadMore({data, fetchMore, loading, updateQuery}) {
+type LoadMoreProps = {
+    data: RepositoryType;
+    fetchMore: (value: any) => void;
+    updateQuery: (value: any, value2: any) => void;
+    loading: boolean;
+}
+
+export default function LoadMore({data, fetchMore, updateQuery, loading} : LoadMoreProps) {
     const [isLoadingMore, setIsLoadingMore] = useState(false);
 
     const getNextPage = useCallback(async () => {
@@ -29,7 +37,7 @@ export default function LoadMore({data, fetchMore, loading, updateQuery}) {
     return (
         <div>
             <Button
-                disabled={isLoadingMore}
+                disabled={loading || isLoadingMore}
                 onClick={getNextPage}
             >
                 Load more

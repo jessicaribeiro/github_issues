@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export default function ErrorMessage({error}) {
+export default function ErrorMessage({error} : any) {
     return (
         <ErrorStyle>
             <p>{error.toString()}</p>

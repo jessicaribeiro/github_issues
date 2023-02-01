@@ -2,12 +2,13 @@ import Issues from "@/components/Issues";
 import styled from "styled-components";
 import {useState} from "react";
 import {Filter} from "@/components/Filter";
+import {StatusEnum} from "@/enums/enums";
+import {FilterStatus} from "@/types/types";
 
 export default function IssuesPage() {
-    const [filteredStatus, setFilteredStatus] = useState<string>('OPEN');
+    const [filteredStatus, setFilteredStatus] = useState<FilterStatus>(StatusEnum.Open);
 
-    // TODO create ENUM
-    const allStatusOptions = ['OPEN', 'CLOSED'].map(status => {
+    const allStatusOptions = Object.values(StatusEnum).map(status => {
         return {
             label: status.toLowerCase(),
             value: status

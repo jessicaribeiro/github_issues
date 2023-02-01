@@ -2,10 +2,9 @@ import {gql, useQuery} from "@apollo/client";
 import styled from "styled-components"
 import Issue from "@/components/Issue";
 import LoadMore from "@/components/LoadMore";
-import {Filter} from "./Filter";
-import {useState} from "react";
 import ErrorMessage from "@/components/ErrorMessage";
 import {CircularProgress} from "@mui/material";
+import {FilterStatus, IssueType, QueryResultType} from "@/types/types";
 
 export const ALL_ISSUES_QUERY = gql`
     query ALL_ISSUES_QUERY($repositoryOwner: String!, $repositoryName: String!, $cursor: String, $issueState: IssueState!) {
@@ -39,7 +38,8 @@ export const ALL_ISSUES_QUERY = gql`
     }
 `;
 
-const updateQuery = (previousResult, {fetchMoreResult}) => {
+// @ts-ignore
+const updateQuery = (previousResult: QueryResultType, {fetchMoreResult}) => {
     if (!fetchMoreResult) {
         return previousResult;
     }
@@ -60,8 +60,11 @@ const updateQuery = (previousResult, {fetchMoreResult}) => {
     };
 };
 
-// TODO add type Issue
-export default function Issues({status}) {
+type IssuesProps = {
+    status: FilterStatus;
+}
+
+export default function Issues({status}: IssuesProps) {
 
     const {data, error, loading, fetchMore} = useQuery(ALL_ISSUES_QUERY, {
         variables: {
@@ -75,7 +78,6 @@ export default function Issues({status}) {
         return <ErrorMessage error={error}/>;
     }
 
-    // TODO spinner
     if (loading) {
         return <CircularProgress style={{alignSelf: 'center'}}/>;
     }
@@ -88,7 +90,7 @@ export default function Issues({status}) {
             <IssuesTableStyle>
                 {/*TODO header*/}
                 <IssuesTableBodyStyle>
-                    {issues.edges.map((issue) => (
+                    {issues.edges.map((issue: IssueType) => (
                         <Issue key={issue.node.id} issue={issue}/>
                     ))}
                 </IssuesTableBodyStyle>
@@ -115,4 +117,3 @@ const IssuesTableStyle = styled.table`
 const IssuesTableBodyStyle = styled.tbody`
   padding: 0 1px;
 `;
-

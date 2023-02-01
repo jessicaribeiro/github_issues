@@ -3,7 +3,6 @@ import type {AppProps} from 'next/app'
 import {ApolloClient, ApolloProvider, HttpLink, InMemoryCache} from '@apollo/client';
 import {ApolloLink} from 'apollo-link';
 import {onError} from 'apollo-link-error';
-import paginationField from "@/lib/PaginationField";
 
 const GITHUB_URL = 'https://api.github.com/graphql';
 
@@ -16,6 +15,7 @@ const GITHUB_URL = 'https://api.github.com/graphql';
 //     },
 // });
 
+// TODO meter em env
 const httpLink = new HttpLink({
     uri: GITHUB_URL,
     headers: {
@@ -39,32 +39,7 @@ const errorLink = onError(({ graphQLErrors, networkError }) => {
 
 const link = ApolloLink.from([errorLink, httpLink]);
 
-// @ts-ignore
-// const cache = new InMemoryCache({
-//     typePolicies: {
-//         Query: {
-//             fields: {
-//                 // @ts-ignore
-//                 repository: paginationField(),
-//             },
-//         },
-//     },
-// })
-
 const cache = new InMemoryCache();
-
-// const initCache = (initialState?: any) => {
-//     return new InMemoryCache({
-//         typePolicies: {
-//             Query: {
-//                 fields: {
-//                     // @ts-ignore
-//                     allIssues: paginationField(),
-//                 },
-//             },
-//         },
-//     }).restore(initialState || {});
-// };
 
 // @ts-ignore
 const client = new ApolloClient({
@@ -81,6 +56,4 @@ export default function App({Component, pageProps}: AppProps) {
     )
 }
 
-// give me my app and inject it with the apollo client, inside of it
-// export default withData(App);
 

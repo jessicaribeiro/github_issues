@@ -1,18 +1,16 @@
 import React from 'react';
-import { Dropdown } from "./Dropdown";
+import {Dropdown} from "./Dropdown";
 import styled from "styled-components";
-// import { FilterType } from '../types/types';
+import {FilterOptionsType, FilterStatus} from "@/types/types";
 
-// type FilterProps = {
-//     label: string;
-//     filterValue: string | undefined;
-//     handleOnChange: (value: string) => void;
-//     options: FilterType[];
-//     clearFilter: () => void;
-//     id: string;
-// }
+type FilterProps = {
+    label: string;
+    filterValue: string | undefined;
+    handleOnChange: (value: FilterStatus) => void;
+    options: FilterOptionsType[];
+}
 
-export function Filter({ label, filterValue, handleOnChange, options }) {
+export function Filter({label, filterValue, handleOnChange, options}: FilterProps) {
     const value = filterValue === undefined ? "default" : filterValue;
 
     return (

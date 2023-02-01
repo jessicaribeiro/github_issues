@@ -1,18 +1,18 @@
 import React from 'react';
 import styled from "styled-components";
-// import { FilterType } from "../types/types";
+import {FilterOptionsType, FilterStatus} from "@/types/types";
 
-// type DropdownProps = {
-//     label: string;
-//     options: FilterType[];
-//     value: string;
-//     handleOnChange: (value: string) => void;
-//     clearFilter: () => void;
-// }
+type DropdownProps = {
+    label: string;
+    options: FilterOptionsType[];
+    value: string;
+    handleOnChange: (value: FilterStatus) => void;
+}
 
-export function Dropdown({label, options, value, handleOnChange}) {
+export function Dropdown({label, options, value, handleOnChange}: DropdownProps) {
     const onChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-        handleOnChange(event.target.value);
+        console.log('event.target.value', event.target.value)
+        handleOnChange(event.target.value as FilterStatus);
     }
 
     return (
@@ -45,5 +45,3 @@ const SelectStyle = styled.select`
     cursor: pointer;
   }
 `;
-
-
