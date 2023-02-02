@@ -47,3 +47,4 @@ NEXT_PUBLIC_GITHUB_ACCESS_TOKEN=<your_github_token>
 - Handle errors
 - Improve UI 
 - Improve flaky tests
+- Store in cache
