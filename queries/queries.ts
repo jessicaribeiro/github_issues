@@ -7,6 +7,7 @@ export const ALL_ISSUES_QUERY = gql`
                 first: 5
                 after: $cursor
                 filterBy: { states: $issueState }
+                orderBy: {direction: DESC, field: CREATED_AT}
             ){
                 edges {
                     cursor

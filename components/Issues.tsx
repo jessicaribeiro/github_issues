@@ -35,7 +35,7 @@ export default function Issues({issues, filteredState, totalCount}: IssuesProps)
 
 const IssuesTableStyle = styled.table`
   position: relative;
-  width: 96vw;
+  width: 95vw;
   margin-bottom: 40px;
   border-collapse: collapse;
 `;

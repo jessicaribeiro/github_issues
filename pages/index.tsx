@@ -113,5 +113,3 @@ const PageHeaderStyle = styled.div`
   margin-bottom: 20px;
   gap: 5px;
 `;
-
-
