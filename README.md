@@ -5,7 +5,11 @@ and Github GraphQL API.
 The data is obtained from [Github React](https://github.com/reactjs/reactjs.org) using the [Github GraphQL API](https://docs.github.com/en/graphql), and it allows users to see a list of Github issues and filter this list by issue State (Open/Close).
 
 ## Project Set-up
-For security reasons and to avoid exposing sensitive data, the NEXT_PUBLIC_GITHUB_ACCESS_TOKEN is set in a .env.local file, so to run the project locally you have to create the .env.local file and set the values as follows:
+For security reasons and to avoid exposing sensitive data, the NEXT_PUBLIC_GITHUB_ACCESS_TOKEN is set in a .env.local file, so to run the project locally you have to:
+
+1. Create your personal access [Github token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
+
+2. Create the .env.local file in the root folder and set the values as follows:
 
 ```bash
 NEXT_PUBLIC_GITHUB_ACCESS_TOKEN=<your_github_token>
