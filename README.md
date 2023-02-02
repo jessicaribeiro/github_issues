@@ -2,7 +2,7 @@
 
 The project goal is to implement a small client application using Nextjs
 and Github GraphQL API. 
-The data is obtained from [Github React](https://github.com/reactjs/reactjs.org) using the [Github GraphQL API](https://docs.github.com/en/graphql), and it allows users to see a list of Github issues and filter this list by issue State (Open/Close).
+The data is obtained from [Github React](https://github.com/reactjs/reactjs.org/issues) using the [Github GraphQL API](https://docs.github.com/en/graphql), and it allows users to see a list of Github issues and filter this list by issue State (Open/Close).
 
 ## Project Set-up
 For security reasons and to avoid exposing sensitive data, the NEXT_PUBLIC_GITHUB_ACCESS_TOKEN is set in a .env.local file, so to run the project locally you have to:

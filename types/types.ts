@@ -1,4 +1,4 @@
-import {StatusEnum} from "@/enums/enums";
+import {StateEnum} from "@/enums/enums";
 import {Key} from "react";
 
 export type QueryResultType = {
@@ -20,7 +20,7 @@ export type NodeType = {
     id: Key;
     title: String;
     url: String;
-    state: String;
+    state: StateEnum;
     number: String;
     createdAt: String;
     author: any;
@@ -32,12 +32,7 @@ export type IssueType = {
 
 export type FilterOptionsType = {
     label: string;
-    value: FilterStatus;
+    value: FilterState;
 };
 
-export type FilterStatus = StatusEnum.Open | StatusEnum.Closed;
-
-type FetchMoreType = {
-    offset: number;
-    limit: number;
-};
+export type FilterState = StateEnum.Open | StateEnum.Closed | undefined;

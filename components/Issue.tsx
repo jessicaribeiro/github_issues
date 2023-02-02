@@ -8,13 +8,11 @@ type IssueProps = {
 }
 
 export default function Issue({issue}: IssueProps) {
-
     const {state, title, number, createdAt, author} = issue.node;
 
     const stateOpen = state === "OPEN";
 
     const fromNow = moment(createdAt as MomentInput).fromNow();
-
 
     return (
         <IssueRowStyle>
@@ -22,7 +20,7 @@ export default function Issue({issue}: IssueProps) {
                 <AdjustIcon style={{color: (stateOpen ? 'green' : 'red'), padding: '8px 0 0 16px'}}/>
                 <IssueTextStyle>
                     <IssueTitleStyle>{title}</IssueTitleStyle>
-                    <IssueDescriptionStyle>#{number} opened {fromNow} by {author.login}</IssueDescriptionStyle>
+                    <IssueDescriptionStyle>#{number} opened {fromNow} by {author?.login}</IssueDescriptionStyle>
                 </IssueTextStyle>
             </IssueCellStyle>
         </IssueRowStyle>
