@@ -1,20 +1,25 @@
 import styled from "styled-components";
 import AdjustIcon from '@mui/icons-material/Adjust';
-import moment from "moment";
+import moment, {MomentInput} from "moment";
+import {IssueType} from "@/types/types";
 
-export default function Issue({issue}) {
+type IssueProps = {
+    issue: IssueType;
+}
+
+export default function Issue({issue}: IssueProps) {
 
     const {state, title, number, createdAt, author} = issue.node;
 
     const stateOpen = state === "OPEN";
 
-    const fromNow = moment(createdAt).fromNow();
+    const fromNow = moment(createdAt as MomentInput).fromNow();
 
 
     return (
         <IssueRowStyle>
             <IssueCellStyle>
-                <AdjustIcon style={{ color: (stateOpen ? 'green' : 'red'), padding: '8px 0 0 16px'}}/>
+                <AdjustIcon style={{color: (stateOpen ? 'green' : 'red'), padding: '8px 0 0 16px'}}/>
                 <IssueTextStyle>
                     <IssueTitleStyle>{title}</IssueTitleStyle>
                     <IssueDescriptionStyle>#{number} opened {fromNow} by {author.login}</IssueDescriptionStyle>
