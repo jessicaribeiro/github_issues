@@ -1,7 +1,7 @@
 # Homelike
 
 The project goal is to implement a small client application using Nextjs
-and Github GraphQL API. 
+and GitHub GraphQL API. 
 The data is obtained from [Github React](https://github.com/reactjs/reactjs.org/issues) using the [Github GraphQL API](https://docs.github.com/en/graphql), and it allows users to see a list of Github issues and filter this list by issue State (Open/Close).
 
 ## Project Set-up
@@ -23,23 +23,20 @@ NEXT_PUBLIC_GITHUB_ACCESS_TOKEN=<your_github_token>
 5. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result
 
 
-## To run Cypress tests
-1. Run `npm run cypress:open`. It will launch the cypress app (check https://www.cypress.io/ for more details)
-2. Select E2E testing
-3. Start testing in Chrome
-4. Select `applications.cy.ts` spec to open and run tests
+## To run Jest tests
+1. Run `npm run test`
 
 ## Tech stack
 
-- NextJS: [Next.js](https://nextjs.org/)
-- Apollo GraplQL: [GraphQL](https://www.apollographql.com/)
-- JS Framework : [React](https://reactjs.org/)
-- E2E Test: [Cypress](https://www.cypress.io/)
-- Material UI icons: [Material UI](https://mui.com/material-ui/material-icons/)
-- MomentJS: [MomentJS](https://momentjs.com/)
-- Typescript: [Typescript](https://www.typescriptlang.org/)
-- Styled Components: [StyledComponents](https://styled-components.com/)
-
+- [Next.js](https://nextjs.org/)
+- [Apollo GraphQL](https://www.apollographql.com/)
+- [React](https://reactjs.org/)
+- [Material UI icons](https://mui.com/material-ui/material-icons/)
+- [MomentJS](https://momentjs.com/)
+- [Typescript](https://www.typescriptlang.org/)
+- [Styled Components](https://styled-components.com/)
+- [Jest](https://jestjs.io/)
+- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
 
 ### Improvements
 - Change pagination strategy 
@@ -48,3 +45,4 @@ NEXT_PUBLIC_GITHUB_ACCESS_TOKEN=<your_github_token>
 - Improve UI 
 - Improve flaky tests
 - Store in cache
+- Add Cypress E2E tests

@@ -1,7 +1,7 @@
 import Issues from "@/components/Issues";
 import styled from "styled-components";
 import GitHubIcon from '@mui/icons-material/GitHub';
-import {Filter} from "@/components/Filter";
+import Filter from "@/components/Filter";
 import {useEffect, useState} from "react";
 import {FilterState, QueryResultType} from "@/types/types";
 import {useLazyQuery} from "@apollo/client";

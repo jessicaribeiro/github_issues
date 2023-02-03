@@ -1,5 +1,6 @@
 import styled from "styled-components"
-import Issue from "@/components/Issue";
+import {Issue} from "./Issue";
+
 import {
     FilterState,
     IssueType,
@@ -17,7 +18,7 @@ export default function Issues({issues, filteredState, totalCount}: IssuesProps)
             <IssuesTableStyle>
                 <IssuesTableHeaderStyle>
                     <tr>
-                        <td>Total {filteredState?.toLowerCase()} issues: {totalCount}</td>
+                        <td data-testid='total-issues'>Total {filteredState?.toLowerCase()} issues: {totalCount}</td>
                     </tr>
                 </IssuesTableHeaderStyle>
 

@@ -58,6 +58,7 @@ const Button = styled.button`
   background-color: var(--blue);
   transition: .3s;
   font-weight: bold;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 
   &:hover {
     background: white;

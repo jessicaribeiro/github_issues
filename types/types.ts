@@ -31,7 +31,7 @@ export type IssueType = {
 };
 
 export type FilterOptionsType = {
-    label: string;
+    label: String;
     value: FilterState;
 };
 

@@ -15,13 +15,13 @@ export function Dropdown({label, options, value, handleOnChange, clearFilter}: D
         handleOnChange(event.target.value as FilterState);
     }
 
-    function capitalize(value: String): String {
-        return value.charAt(0).toUpperCase() + value.slice(1);
+    function capitalize(value : String) : String {
+        return value?.charAt(0).toUpperCase() + value.toLocaleLowerCase()?.slice(1);
     }
 
     return (
         <DropdownStyle>
-            <SelectStyle value={value} onChange={onChange}>
+            <SelectStyle value={value} onChange={onChange}  data-testid="select-filter">
                 <option value="default" disabled>{label}</option>
                 {options.map((option, index) => (
                     <option key={index} value={option.value}>{capitalize(option.label)}</option>

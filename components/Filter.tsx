@@ -11,7 +11,7 @@ type FilterProps = {
     clearFilter: () => void;
 }
 
-export function Filter({label, filterValue, handleOnChange, options, clearFilter}: FilterProps) {
+export default function Filter({label, filterValue, handleOnChange, options, clearFilter}: FilterProps) {
     const value = filterValue === undefined ? "default" : filterValue;
 
     return (

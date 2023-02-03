@@ -2,13 +2,14 @@ import styled from "styled-components";
 import AdjustIcon from '@mui/icons-material/Adjust';
 import moment, {MomentInput} from "moment";
 import {IssueType} from "@/types/types";
+import Tooltip from '@mui/material/Tooltip';
 
 type IssueProps = {
     issue: IssueType;
 }
 
-export default function Issue({issue}: IssueProps) {
-    const {state, title, number, createdAt, author} = issue.node;
+export function Issue({issue}: IssueProps) {
+    const {state, title, number, createdAt, author, id} = issue.node;
 
     const stateOpen = state === "OPEN";
 
@@ -17,10 +18,13 @@ export default function Issue({issue}: IssueProps) {
     return (
         <IssueRowStyle>
             <IssueCellStyle>
-                <AdjustIcon style={{color: (stateOpen ? 'green' : 'red'), padding: '8px 0 0 16px'}}/>
+                <Tooltip title={state.toLocaleLowerCase()} placement="right-end">
+                    <AdjustIcon style={{color: (stateOpen ? 'green' : 'red'), padding: '8px 0 0 16px'}}/>
+                </Tooltip>
                 <IssueTextStyle>
-                    <IssueTitleStyle>{title}</IssueTitleStyle>
-                    <IssueDescriptionStyle>#{number} opened {fromNow} by {author?.login}</IssueDescriptionStyle>
+                    <IssueTitleStyle data-testid={`issue-title-${id}`}>{title}</IssueTitleStyle>
+                    <IssueDescriptionStyle
+                        data-testid={`issue-description-${id}`}>#{number} opened {fromNow} by {author?.login}</IssueDescriptionStyle>
                 </IssueTextStyle>
             </IssueCellStyle>
         </IssueRowStyle>
