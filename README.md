@@ -7,6 +7,9 @@ The data is obtained from [Github React](https://github.com/reactjs/reactjs.org/
 
 Used [GraphQL API Explored](https://docs.github.com/en/graphql/overview/explorer) to see Schema and run Queries.
 
+<img width="1248" alt="Screenshot 2023-02-03 at 12 31 57" src="https://user-images.githubusercontent.com/6878126/216604678-07db3295-997d-4d85-9979-6e119b436e62.png">
+
+
 ## Project Set-up
 For security reasons and to avoid exposing sensitive data, the NEXT_PUBLIC_GITHUB_ACCESS_TOKEN is set in a .env.local file, so to run the project locally you have to:
 
