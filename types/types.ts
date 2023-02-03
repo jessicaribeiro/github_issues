@@ -1,9 +1,9 @@
-import {StateEnum} from "@/enums/enums";
 import {Key} from "react";
+import {StateEnum} from "@/enums/enums";
 
 export type QueryResultType = {
     repository: RepositoryType
-}
+};
 
 export type RepositoryType = {
     issues: {

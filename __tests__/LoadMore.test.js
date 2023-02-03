@@ -26,5 +26,4 @@ describe('<LoadMore/>', () => {
 
         expect(container).toMatchSnapshot();
     });
-
 });

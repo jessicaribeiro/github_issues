@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import AdjustIcon from '@mui/icons-material/Adjust';
 import moment, {MomentInput} from "moment";
-import {IssueType} from "@/types/types";
+import AdjustIcon from '@mui/icons-material/Adjust';
 import Tooltip from '@mui/material/Tooltip';
+import {IssueType} from "@/types/types";
 
 type IssueProps = {
     issue: IssueType;

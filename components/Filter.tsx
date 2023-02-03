@@ -1,6 +1,6 @@
 import React from 'react';
-import {Dropdown} from "./Dropdown";
 import styled from "styled-components";
+import {Dropdown} from "./Dropdown";
 import {FilterOptionsType, FilterState} from "@/types/types";
 
 type FilterProps = {

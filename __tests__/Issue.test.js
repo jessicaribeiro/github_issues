@@ -1,8 +1,8 @@
 import {render, screen} from "@testing-library/react";
+import {MockedProvider} from '@apollo/react-testing';
+import moment from "moment";
 import {Issue} from '../components/Issue';
 import {fakeIssue} from '../lib/testUtils';
-import moment from "moment";
-import {MockedProvider} from '@apollo/react-testing';
 
 jest.mock('moment', () => {
     return () => jest.requireActual('moment')('2010-01-01T00:00:00.000Z');

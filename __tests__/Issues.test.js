@@ -3,8 +3,6 @@ import {MockedProvider} from "@apollo/react-testing";
 import Issues from "../components/Issues";
 import {fakeIssue, fakeIssue2} from "../lib/testUtils";
 import {StateEnum} from "../enums/enums";
-import moment from "moment";
-import {Issue} from "../components/Issue";
 
 describe('<Issues/>', () => {
     const issues = [fakeIssue(), fakeIssue2()];
@@ -36,5 +34,4 @@ describe('<Issues/>', () => {
 
         expect(container).toMatchSnapshot();
     });
-
 });

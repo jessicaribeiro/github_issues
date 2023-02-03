@@ -1,15 +1,15 @@
-import Issues from "@/components/Issues";
+import {useEffect, useState} from "react";
+import {useLazyQuery} from "@apollo/client";
 import styled from "styled-components";
 import GitHubIcon from '@mui/icons-material/GitHub';
-import Filter from "@/components/Filter";
-import {useEffect, useState} from "react";
-import {FilterState, QueryResultType} from "@/types/types";
-import {useLazyQuery} from "@apollo/client";
-import {ALL_ISSUES_QUERY} from "@/queries/queries";
-import {StateEnum} from "@/enums/enums";
-import ErrorMessage from "@/components/ErrorMessage";
 import {CircularProgress} from "@mui/material";
+import {FilterState, QueryResultType} from "@/types/types";
+import {StateEnum} from "@/enums/enums";
+import {ALL_ISSUES_QUERY} from "@/queries/queries";
 import LoadMore from "@/components/LoadMore";
+import Issues from "@/components/Issues";
+import ErrorMessage from "@/components/ErrorMessage";
+import Filter from "@/components/Filter";
 
 // @ts-ignore
 const updateQuery = (previousResult: QueryResultType, {fetchMoreResult}) => {

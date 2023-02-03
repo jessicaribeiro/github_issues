@@ -1,7 +1,7 @@
 import {render, screen} from "@testing-library/react";
 import {MockedProvider} from "@apollo/react-testing";
 import Filter from "../components/Filter";
-import {fakeFilterState, fakeIssue} from "../lib/testUtils";
+import {fakeFilterState} from "../lib/testUtils";
 
 describe('<Filter/>', () => {
     const filter = fakeFilterState();
@@ -30,5 +30,3 @@ describe('<Filter/>', () => {
         expect(container).toMatchSnapshot();
     });
 });
-
-// {label, filterValue, handleOnChange, options, clearFilter}
