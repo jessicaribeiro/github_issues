@@ -2,7 +2,8 @@
 
 The project goal is to implement a small client application using Nextjs
 and GitHub GraphQL API. 
-The data is obtained from [Github React](https://github.com/reactjs/reactjs.org/issues) using the [Github GraphQL API](https://docs.github.com/en/graphql), and it allows users to see a list of Github issues and filter this list by issue State (Open/Close).
+
+The data is obtained from [Github React](https://github.com/reactjs/reactjs.org/issues) using the [Github GraphQL API](https://docs.github.com/en/graphql), and it allows users to see a list of Github issues and filter this list by State (Open/Closed).
 
 Used [GraphQL API Explored](https://docs.github.com/en/graphql/overview/explorer) to see Schema and run Queries.
 
