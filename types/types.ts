@@ -9,20 +9,20 @@ export type RepositoryType = {
     issues: {
         edges: NodeType[]
     };
-    totalCount: Number;
+    totalCount: number;
     pageInfo: {
-        endCursor: String,
+        endCursor: string,
         hasNextPage: boolean,
     }
 };
 
 export type NodeType = {
     id: Key;
-    title: String;
-    url: String;
+    title: string;
+    url: string;
     state: StateEnum;
-    number: String;
-    createdAt: String;
+    number: string;
+    createdAt: string;
     author: any;
 };
 
@@ -31,7 +31,7 @@ export type IssueType = {
 };
 
 export type FilterOptionsType = {
-    label: String;
+    label: string;
     value: FilterState;
 };
 

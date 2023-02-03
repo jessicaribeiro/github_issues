@@ -15,7 +15,7 @@ export function Dropdown({label, options, value, handleOnChange, clearFilter}: D
         handleOnChange(event.target.value as FilterState);
     }
 
-    function capitalize(value : String) : String {
+    function capitalize(value : string) : string {
         return value?.charAt(0).toUpperCase() + value.toLocaleLowerCase()?.slice(1);
     }
 

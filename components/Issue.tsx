@@ -9,7 +9,7 @@ type IssueProps = {
 }
 
 export function Issue({issue}: IssueProps) {
-    const {state, title, number, createdAt, author, id} = issue.node;
+    const {state, title, number, createdAt, author, id, url} = issue.node;
 
     const stateOpen = state === "OPEN";
 
@@ -22,7 +22,9 @@ export function Issue({issue}: IssueProps) {
                     <AdjustIcon style={{color: (stateOpen ? 'green' : 'red'), padding: '8px 0 0 16px'}}/>
                 </Tooltip>
                 <IssueTextStyle>
-                    <IssueTitleStyle data-testid={`issue-title-${id}`}>{title}</IssueTitleStyle>
+                    <LinkStyle href={url} target="_blank" rel="noopener noreferrer">
+                        <IssueTitleStyle data-testid={`issue-title-${id}`}>{title}</IssueTitleStyle>
+                    </LinkStyle>
                     <IssueDescriptionStyle
                         data-testid={`issue-description-${id}`}>#{number} opened {fromNow} by {author?.login}</IssueDescriptionStyle>
                 </IssueTextStyle>
@@ -59,6 +61,10 @@ const IssueTitleStyle = styled.span`
   color: var(--darkGrey);
   line-height: 21px;
   font-weight: bold;
+  
+  &:hover {
+    color: var(--blue);
+  }
 `;
 
 const IssueDescriptionStyle = styled.span`
@@ -67,4 +73,8 @@ const IssueDescriptionStyle = styled.span`
   white-space: nowrap;
   overflow: hidden;
   line-height: 21px;
+`;
+
+const LinkStyle = styled.a`
+  text-decoration: none;
 `;
