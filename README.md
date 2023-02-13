@@ -1,4 +1,4 @@
-# Homelike
+# Github Issues
 
 The project goal is to implement a small client application using Nextjs
 and GitHub GraphQL API. 
